@@ -1,0 +1,10 @@
+[Unit]
+Description=Start the CorpWeb App
+
+[Service]
+Restart=on-failure
+WorkingDirectory=/var/www/projects/corpweb
+ExecStart=/usr/bin/python3 manage.py runserver 0.0.0.0:80
+
+[Install]
+WantedBy=multi-user.target

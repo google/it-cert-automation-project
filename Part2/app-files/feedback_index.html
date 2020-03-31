@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Feedback Received</title>
+	</head>
+<style>
+body {
+	font-family: sans-serif;
+}
+h1 {
+    font-size: 36px;
+    line-height: 50px;
+    color: #355681;
+    margin-bottom: 10px;
+}
+div {
+    margin: 20px;
+    width: 500px;
+}
+h4 {
+    font-size: 24px;
+    background: #355681;
+    color: white;    
+    padding: 5px 15px;
+    border-radius: 0 10px 0 10px;
+    margin-bottom: 0;
+}
+h5 {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #355681;
+}
+p {
+	font-size: 14px;
+}
+
+</style>
+<body>
+<h1>Feedback Received</h1>
+{% for comment in feedback %}
+<div >
+	<h4>{{comment.title}}</h4>
+	<h5>{{comment.name}} - {{comment.date}}</h5>
+	<p>{{comment.feedback}}</p>
+	<hr/>
+</div>
+{% endfor %}
+</body>
+</html>

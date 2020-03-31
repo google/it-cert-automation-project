@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Fruit Catalog</title>
+	</head>
+<style>
+body {
+	font-family: sans-serif;
+	background-color: #bfb5af;
+}
+h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    color: #7d2e68;
+}
+div {
+    margin: 20px;
+    width: 80%;
+    clear: both;
+}
+h4 {
+    font-size: 24px;
+    background: #1c3041;
+    color: #ece2d0;    
+    padding: 5px 15px;
+    border-radius: 0 10px 0 10px;
+    margin-bottom: 0;
+}
+h5 {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #37123c;
+}
+p {
+    font-size: 14px;
+    color: #1c3041;
+}
+img {
+    float: left;
+    margin: 0px 15px 15px 0px;
+}
+</style>
+<body>
+<h1>Fruit Catalog</h1>
+{% load static %}
+{% get_media_prefix as media_url %}
+{% for fruit in fruits %}
+<div >
+	<h4>{{fruit.name}}</h4>
+	<h5>Weight: {{fruit.weight}} lbs</h5>
+	<p>{{fruit.description}}
+	{% if fruit.image_name %}
+		<img src="{{media_url}}images/{{fruit.image_name}}">
+	{% endif %}
+	</p>
+</div>
+{% endfor %}
+</body>
+</html>
